@@ -121,6 +121,12 @@ def _(Path, load_weights):
 
 
 @app.cell
+def _(weights):
+    weights
+    return
+
+
+@app.cell
 def _(canvas, model_forward, weights):
     pred = model_forward(weights, canvas.numpy / 255.0).argmax().item()
     return (pred,)
